@@ -1,116 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prajwal Dikshit - Portfolio</title>
+  <meta name="description" content="Portfolio of Prajwal Dikshit - Web Developer" />
+  <title>Prajwal Dikshit | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="bg-gradient-to-b from-white to-gray-50 text-gray-900">
 
-  <!-- Hero Section -->
-  <header class="text-center py-20 bg-gradient-to-r from-indigo-600 to-purple-700">
-    <h1 class="text-5xl font-bold mb-4">Hi, I'm Prajwal Dikshit</h1>
-    <p class="text-xl text-gray-200">Cybersecurity Enthusiast | AI Developer | Innovator</p>
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b bg-white/80 backdrop-blur">
+    <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <a href="#home" class="font-bold text-lg">Prajwal <span class="text-gray-500">Dikshit</span></a>
+      <ul class="hidden md:flex space-x-6 text-sm font-medium">
+        <li><a href="#about" class="hover:text-gray-500">About</a></li>
+        <li><a href="#skills" class="hover:text-gray-500">Skills</a></li>
+        <li><a href="#projects" class="hover:text-gray-500">Projects</a></li>
+        <li><a href="#resume" class="hover:text-gray-500">Resume</a></li>
+        <li><a href="#contact" class="hover:text-gray-500">Contact</a></li>
+      </ul>
+      <a href="assets/resume.pdf" download class="px-4 py-2 border rounded-lg text-sm flex items-center gap-2">
+        <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+    </nav>
   </header>
 
-  <!-- Projects Section -->
-  <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  <main id="home" class="max-w-6xl mx-auto px-6">
 
-      <!-- Ghostnet VPN -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/ghostnet.png" alt="Ghostnet VPN" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Ghostnet VPN</h3>
-          <p class="text-gray-400 text-sm">A secure VPN service with AES encryption and IP masking.</p>
+    <!-- Hero -->
+    <section class="pt-20 md:pt-28 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-7">
+        <div class="inline-flex items-center gap-2 px-3 py-1 border rounded-full text-xs">
+          <span class="w-2 h-2 bg-green-500 rounded-full"></span> Available for opportunities
+        </div>
+        <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight">
+          Building clean, fast, and accessible web experiences.
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          I'm <strong>Prajwal Dikshit</strong>, a developer focused on React, Tailwind, and delightful UX.
+        </p>
+        <div class="mt-6 flex gap-4">
+          <a href="#projects" class="px-5 py-3 border rounded-lg font-medium">View Projects</a>
+          <a href="#contact" class="px-5 py-3 bg-black text-white rounded-lg font-medium hover:opacity-90">Contact Me</a>
         </div>
       </div>
-
-      <!-- ZenBot -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/zenbot.png" alt="ZenBot" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">ZenBot</h3>
-          <p class="text-gray-400 text-sm">An AI-powered mental health companion chatbot.</p>
+      <div class="md:col-span-5">
+        <div class="border border-dashed rounded-2xl p-6 text-center text-sm text-gray-500">
+          No profile photo. Clean layout.
         </div>
       </div>
+    </section>
 
-      <!-- AI Detective Mystery -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/detective.png" alt="AI Detective Mystery" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">AI Detective Mystery</h3>
-          <p class="text-gray-400 text-sm">Multiplayer AI-powered detective game to solve mysteries.</p>
-        </div>
-      </div>
-
-      <!-- NetGuard -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/netguard.png" alt="NetGuard" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">NetGuard</h3>
-          <p class="text-gray-400 text-sm">A real-time network security monitoring and firewall system.</p>
-        </div>
-      </div>
-
-      <!-- Placeholder 1 -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/project-placeholder1.png" alt="Project Placeholder" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Coming Soon</h3>
-          <p class="text-gray-400 text-sm">New exciting project under development.</p>
-        </div>
-      </div>
-
-      <!-- Placeholder 2 -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/project-placeholder2.png" alt="Project Placeholder" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Coming Soon</h3>
-          <p class="text-gray-400 text-sm">Another project will be showcased here soon.</p>
-        </div>
-      </div>
-
-      <!-- Placeholder 3 -->
-      <div class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:scale-105 transition">
-        <img src="assets/project-placeholder3.png" alt="Project Placeholder" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold">Coming Soon</h3>
-          <p class="text-gray-400 text-sm">Stay tuned for upcoming work.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-20 bg-gray-800 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-bold mb-6">About Me</h2>
-      <p class="text-gray-300 text-lg">
-        I am a passionate developer focused on Cybersecurity and Artificial Intelligence. 
-        I love creating innovative tools, applications, and systems that make technology more secure and intelligent.
+    <!-- About -->
+    <section id="about" class="pt-24 text-center">
+      <h2 class="text-3xl font-bold">About Me</h2>
+      <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+        I'm a frontend-focused developer passionate about building interfaces that are fast,
+        inclusive, and visually refined. My current stack includes React, Next.js, Tailwind CSS,
+        and TypeScript.
       </p>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-20 max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-6">Contact Me</h2>
-    <form class="space-y-4 max-w-lg mx-auto">
-      <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <input type="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-      <textarea placeholder="Your Message" rows="5" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
-      <button type="submit" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg w-full">Send Message</button>
-    </form>
-  </section>
+    <!-- Skills -->
+    <section id="skills" class="pt-24 text-center">
+      <h2 class="text-3xl font-bold">Skills</h2>
+      <div class="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <div class="border rounded-xl px-4 py-3 text-sm">JavaScript</div>
+        <div class="border rounded-xl px-4 py-3 text-sm">TypeScript</div>
+        <div class="border rounded-xl px-4 py-3 text-sm">React</div>
+        <div class="border rounded-xl px-4 py-3 text-sm">Tailwind CSS</div>
+        <div class="border rounded-xl px-4 py-3 text-sm">Node.js</div>
+        <div class="border rounded-xl px-4 py-3 text-sm">MongoDB</div>
+      </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 text-gray-400 text-sm">
-    © Prajwal Dikshit
-  </footer>
+    <!-- Projects -->
+    <section id="projects" class="pt-24">
+      <h2 class="text-3xl font-bold text-center">Projects</h2>
+      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Project card -->
+        <div class="border rounded-2xl overflow-hidden shadow hover:shadow-md transition">
+          <img src="assets/img/project-placeholder1.png" alt="Project 1" class="w-full h-48 object-cover">
+          <div class="p-5">
+            <h3 class="font-semibold text-lg">Project One</h3>
+            <p class="text-sm text-gray-600 mt-2">A brief description of an impactful project.</p>
+            <div class="mt-4 flex gap-3 text-sm">
+              <a href="#" class="flex items-center gap-1 border px-3 py-1 rounded-lg"><i class="fa-solid fa-link"></i> Live</a>
+              <a href="#" class="flex items-center gap-1 border px-3 py-1 rounded-lg"><i class="fa-brands fa-github"></i> Code</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </section>
 
+    <!-- Resume -->
+    <section id="resume" class="pt-24 text-center">
+      <h2 class="text-3xl font-bold">Resume</h2>
+      <a href="assets/resume.pdf" download class="mt-4 inline-flex items-center gap-2 px-4 py-2 border rounded-lg text-sm">
+        <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+      </a>
+      <div class="mt-6 border rounded-2xl overflow-hidden">
+        <object data="assets/resume.pdf" type="application/pdf" class="w-full h-[70vh]">
+          <p class="p-4">Your browser can’t display the PDF. <a href="assets/resume.pdf" download class="underline">Download it here</a>.</p>
+        </object>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="pt-24 pb-16 text-center">
+      <h2 class="text-3xl font-bold">Contact</h2>
+      <p class="mt-3">Let’s build something together</p>
+      <div class="mt-6 flex flex-col sm:flex-row justify-center gap-4">
+        <a href="mailto:youremail@example.com" class="flex items-center gap-2 border px-4 py-2 rounded-lg"><i class="fa-solid fa-envelope"></i> Email</a>
+        <a href="https://github.com/yourusername" target="_blank" class="flex items-center gap-2 border px-4 py-2 rounded-lg"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="flex items-center gap-2 border px-4 py-2 rounded-lg"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+      <p class="mt-8 text-xs text-gray-500">© 2025 Prajwal Dikshit. All rights reserved.</p>
+    </section>
+
+  </main>
 </body>
 </html>
