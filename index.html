@@ -2,159 +2,147 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prajwal Dikshit — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Prajwal Dikshit - AI & Cybersecurity Enthusiast">
+  <title>Prajwal Dikshit | Portfolio</title>
+  <link rel="icon" href="assets/img/favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="nav">
-    <div class="brand">Prajwal Dikshit</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<body class="bg-gray-900 text-gray-200">
 
-  <section class="hero" id="home" role="banner" aria-label="Intro">
-    <div class="hero__overlay"></div>
-    <img src="assets/hero-bg.jpg" alt="" class="hero__bg" />
-    <div class="hero__content">
-      <h1>Full-Stack MCA Student</h1>
-      <p class="tagline">Python • JS • Security • Cloud • Data</p>
-      <div class="cta">
-        <a class="btn primary" href="#projects">View Projects</a>
-        <a class="btn ghost" href="#contact">Contact</a>
-      </div>
+  <!-- HERO -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Hi, I’m <span class="text-indigo-400">Prajwal</span> 👋</h1>
+    <p class="text-lg md:text-2xl text-gray-400 mb-8">AI & Cybersecurity Enthusiast | Building Intelligent and Secure Systems</p>
+    <div class="flex space-x-4">
+      <a href="#projects" class="px-6 py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow-lg transition">View Projects</a>
+      <a href="#contact" class="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg shadow-lg transition">Contact Me</a>
     </div>
   </section>
 
-  <main>
-    <section id="about" class="section">
-      <h2>About Me</h2>
-      <p>
-        Highly motivated and detail-oriented MCA student with a foundation in business administration and computer applications.
-        Adept at analyzing complex data, problem-solving, and building practical tools. Strong communicator who enjoys
-        learning fast, experimenting, and shipping useful projects.
-      </p>
-    </section>
+  <!-- PROJECTS -->
+  <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Projects</h2>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="grid three">
-        <div class="card">
-          <h3>Software</h3>
-          <ul class="pill-list">
-            <li>Python</li><li>C++</li><li>JavaScript</li><li>Microsoft Office</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Interpersonal</h3>
-          <ul class="pill-list">
-            <li>Relationship building</li><li>Team leadership</li><li>Analytical thinking</li><li>Creative problem-solving</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Languages</h3>
-          <ul class="pill-list">
-            <li>English</li><li>Hindi</li><li>Marathi</li><li>Japanese</li>
-          </ul>
+      <!-- Project Card -->
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="assets/img/ghostnet.png" alt="Ghostnet VPN" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Ghostnet VPN</h3>
+          <p class="text-gray-400 mb-4">A secure VPN solution designed for privacy and fast connections.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">Demo</a>
+            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="grid three">
-        <article class="card project">
-          <div class="project-thumb"></div>
-          <h3>Zen Chat Bot</h3>
-          <p>AI mental health assistant that reads emotion from text and replies empathetically.</p>
-          <div class="links">
-            <a class="btn small" href="#" aria-disabled="true">Demo</a>
-            <a class="btn small ghost" href="https://github.com/prajwaldikshit" target="_blank">Code</a>
+      <!-- ZenBot -->
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="assets/img/zenbot.png" alt="ZenBot" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">ZenBot</h3>
+          <p class="text-gray-400 mb-4">An AI-powered chatbot offering intelligent and natural conversations.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">Demo</a>
+            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub</a>
           </div>
-        </article>
-        <article class="card project">
-          <div class="project-thumb"></div>
-          <h3>Show Time Hub</h3>
-          <p>Responsive ticket booking with real-time seat selection and updates.</p>
-          <div class="links">
-            <a class="btn small" href="#" aria-disabled="true">Demo</a>
-            <a class="btn small ghost" href="https://github.com/prajwaldikshit" target="_blank">Code</a>
-          </div>
-        </article>
-        <article class="card project">
-          <div class="project-thumb"></div>
-          <h3>Ghost NET (Mini VPN)</h3>
-          <p>Python CLI + web UI showcasing AES-256 encryption and IP masking.</p>
-          <div class="links">
-            <a class="btn small" href="#" aria-disabled="true">Demo</a>
-            <a class="btn small ghost" href="https://github.com/prajwaldikshit" target="_blank">Code</a>
-          </div>
-        </article>
-        <article class="card project">
-          <div class="project-thumb"></div>
-          <h3>FOCUS-FLOW</h3>
-          <p>React app that nudges productivity by analyzing webcam posture/focus (on-device).</p>
-          <div class="links">
-            <a class="btn small" href="#" aria-disabled="true">Demo</a>
-            <a class="btn small ghost" href="https://github.com/prajwaldikshit" target="_blank">Code</a>
-          </div>
-        </article>
-        <article class="card project">
-          <div class="project-thumb"></div>
-          <h3>AI Detective</h3>
-          <p>Real-time multiplayer mystery game with AI-generated cases (React + Express).</p>
-          <div class="links">
-            <a class="btn small" href="#" aria-disabled="true">Demo</a>
-            <a class="btn small ghost" href="https://github.com/prajwaldikshit" target="_blank">Code</a>
-          </div>
-        </article>
-        <article class="card project">
-          <div class="card-badge">Security</div>
-          <div class="project-thumb"></div>
-          <h3>NetGuard — IDS & Firewall</h3>
-          <p>Live network threat visualization with Flask + Socket.IO.</p>
-          <div class="links">
-            <a class="btn small" href="#" aria-disabled="true">Demo</a>
-            <a class="btn small ghost" href="https://github.com/prajwaldikshit" target="_blank">Code</a>
-          </div>
-        </article>
+        </div>
       </div>
-    </section>
 
-    <section id="resume" class="section resume">
-      <h2>Resume</h2>
-      <img class="resume-banner" src="assets/resume-banner.png" alt="Checkout my resume banner" />
-      <div class="cta">
-        <a class="btn primary" href="assets/Prajwal_Dikshit_Resume.pdf" download>Download PDF</a>
-        <a class="btn ghost" href="assets/Prajwal_Dikshit_Resume.docx" download>Download DOCX</a>
+      <!-- AI Detective Mystery Game -->
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="assets/img/detective.png" alt="AI Detective Mystery Game" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">AI Detective Mystery Game</h3>
+          <p class="text-gray-400 mb-4">An interactive AI-powered game where you solve mysteries with logic.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">Demo</a>
+            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub</a>
+          </div>
+        </div>
       </div>
-    </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="contact">
-        <a href="mailto:prajwaldikshit@gmail.com" class="contact-item">
-          <span class="icon">✉️</span> prajwaldikshit@gmail.com
-        </a>
-        <a href="https://github.com/prajwaldikshit" target="_blank" class="contact-item">
-          <span class="icon">💻</span> github.com/prajwaldikshit
-        </a>
+      <!-- NetGuard -->
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="assets/img/netguard.png" alt="NetGuard" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">NetGuard</h3>
+          <p class="text-gray-400 mb-4">A cybersecurity tool for monitoring and securing network traffic.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">Demo</a>
+            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub</a>
+          </div>
+        </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> Prajwal Dikshit • Built with ❤️</p>
+      <!-- Placeholder Projects -->
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="assets/img/project-placeholder1.png" alt="Project Placeholder" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+          <p class="text-gray-400 mb-4">Short description of this project goes here.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">Demo</a>
+            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-800 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition">
+        <img src="assets/img/project-placeholder2.png" alt="Project Placeholder" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Project Title</h3>
+          <p class="text-gray-400 mb-4">Short description of this project goes here.</p>
+          <div class="flex space-x-3">
+            <a href="#" class="px-4 py-2 bg-indigo-500 rounded-lg hover:bg-indigo-600 transition">Demo</a>
+            <a href="#" class="px-4 py-2 bg-gray-700 rounded-lg hover:bg-gray-600 transition">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">About Me</h2>
+    <p class="text-gray-400 leading-relaxed mb-8">
+      Hi! I’m Prajwal, passionate about Artificial Intelligence, Machine Learning, and Cybersecurity. 
+      I enjoy building intelligent and secure systems that solve real-world problems.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-4 py-2 bg-gray-800 rounded-full">Python</span>
+      <span class="px-4 py-2 bg-gray-800 rounded-full">Flask</span>
+      <span class="px-4 py-2 bg-gray-800 rounded-full">React</span>
+      <span class="px-4 py-2 bg-gray-800 rounded-full">Docker</span>
+      <span class="px-4 py-2 bg-gray-800 rounded-full">Machine Learning</span>
+      <span class="px-4 py-2 bg-gray-800 rounded-full">Cybersecurity</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-20 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-bold mb-8">Contact</h2>
+    <p class="text-gray-400 mb-6">Let’s work together! You can reach me at:</p>
+    <div class="flex justify-center space-x-6 mb-8">
+      <a href="mailto:prajwal@email.com" class="hover:text-indigo-400">📧 Email</a>
+      <a href="https://github.com/" target="_blank" class="hover:text-indigo-400">💻 GitHub</a>
+      <a href="https://linkedin.com/" target="_blank" class="hover:text-indigo-400">🔗 LinkedIn</a>
+    </div>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-indigo-500">
+      <input type="email" placeholder="Your Email" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-indigo-500">
+      <textarea placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-indigo-500"></textarea>
+      <button type="submit" class="w-full py-3 bg-indigo-500 hover:bg-indigo-600 rounded-lg shadow-lg transition">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 text-gray-500 text-sm border-t border-gray-800">
+    © Prajwal Dikshit
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
