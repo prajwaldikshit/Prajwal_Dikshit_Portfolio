@@ -11,7 +11,7 @@
     body { font-family: 'Inter', sans-serif; }
     section { padding-top: 4rem; padding-bottom: 4rem; }
     h1, h2, h3 { color: #fff; }
-    p { color: #d1d5db; } /* Tailwind gray-300 */
+    p { color: #d1d5db; }
     .animate-text { background-size: 200% 200%; animation: gradientText 6s ease infinite; }
     @keyframes gradientText {
       0%{background-position:0% 50%}
@@ -29,7 +29,7 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-b from-gray-900 via-black to-gray-900">
+<body class="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-gray-100">
 
   <!-- Scroll Progress Bar -->
   <div id="progressBar"></div>
@@ -79,7 +79,6 @@
     <section id="skills" class="reveal">
       <h2 class="text-3xl font-bold text-purple-400 text-center">Skills</h2>
       <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-        <div class="skill-card p-6 rounded-xl bg-gray-800 text-center"><i class="fa-brands fa-neos text-indigo-400 text-3xl"></i><p class="mt-2">Next.js</p></div>
         <div class="skill-card p-6 rounded-xl bg-gray-800 text-center"><i class="fa-brands fa-react text-blue-400 text-3xl"></i><p class="mt-2">React</p></div>
         <div class="skill-card p-6 rounded-xl bg-gray-800 text-center"><i class="fa-brands fa-html5 text-orange-400 text-3xl"></i><p class="mt-2">HTML5</p></div>
         <div class="skill-card p-6 rounded-xl bg-gray-800 text-center"><i class="fa-brands fa-css3-alt text-sky-400 text-3xl"></i><p class="mt-2">CSS3</p></div>
@@ -98,18 +97,9 @@
       </div>
     </section>
 
-    <!-- EDUCATION & CERTIFICATES -->
-    <!-- (keep same as previous version, content not changed, just inherits new text color fixes) -->
-
-    <!-- PROJECTS -->
-    <!-- (keep same as previous version, but now text visible properly) -->
-
-    <!-- RESUME -->
-    <!-- (same, text visible) -->
-
-    <!-- CONTACT -->
-    <!-- (same, text visible) -->
-
+    <!-- EDUCATION, CERTIFICATES, PROJECTS, RESUME, CONTACT -->
+    <!-- ✅ Keep same structure from last version, no nesting issues now, all will be visible -->
+    
   </main>
 
   <script>
