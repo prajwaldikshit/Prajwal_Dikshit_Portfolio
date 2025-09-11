@@ -19,6 +19,7 @@
     .carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6); border: none; color: white; font-size: 2rem; padding: 5px 12px; cursor: pointer; border-radius: 50%; }
     .carousel-btn.left { left: 10px; }
     .carousel-btn.right { right: 10px; }
+    h2 span.emoji { filter: brightness(0) invert(1); } /* force emojis white */
   </style>
 </head>
 <body class="bg-black text-white">
@@ -63,53 +64,38 @@
   <section id="skills" class="py-20 px-6 max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-12">Skills</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-12 mb-2"> React</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-12 mb-2"> HTML5</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-12 mb-2"> CSS3</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-12 mb-2"> JavaScript</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-12 mb-2"> Bootstrap</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tailwindcss.svg" class="w-12 mb-2"> Tailwind</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-12 mb-2"> MongoDB</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-12 mb-2"> MySQL</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-12 mb-2"> Python</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-12 mb-2"> Java</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-12 mb-2"> C++</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-12 mb-2"> TypeScript</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/azuredevops.svg" class="w-12 mb-2"> DevOps</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-12 mb-2"> Docker</div>
-      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-12 mb-2"> GitHub</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-14 mb-2"> React</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-14 mb-2"> HTML5</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-14 mb-2"> CSS3</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-14 mb-2"> JavaScript</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" class="w-14 mb-2"> Bootstrap</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" class="w-14 mb-2"> Tailwind</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-14 mb-2"> MongoDB</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="w-14 mb-2"> MySQL</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-14 mb-2"> Python</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-14 mb-2"> Java</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-14 mb-2"> C++</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-14 mb-2"> TypeScript</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" class="w-14 mb-2"> DevOps</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-14 mb-2"> Docker</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-14 mb-2"> GitHub</div>
     </div>
   </section>
 
   <!-- Education + Certificates -->
   <section id="education" class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
     <div>
-      <h2 class="text-4xl font-bold mb-6"><span class="text-white">🎓</span> Education</h2>
-      <div class="bg-gray-800 p-6 rounded-xl mb-6">
-        <h3 class="font-semibold">Master of Computer Applications (MCA)</h3>
-        <p>Aditya Institute of Management Studies and Research, Borivali</p>
-        <p>2024 - 2026 | Mumbai, India</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl mb-6">
-        <h3 class="font-semibold">Bachelor of Commerce (BCom)</h3>
-        <p>Shankar Narayan College, Bhayandar</p>
-        <p>2021 - 2024 | Mumbai, India</p>
-      </div>
-      <div class="bg-gray-800 p-6 rounded-xl">
-        <h3 class="font-semibold">Higher Secondary Certificate (HSC)</h3>
-        <p>Shankar Narayan College, Bhayandar</p>
-        <p>2019 - 2021 | Mumbai, India</p>
-      </div>
+      <h2 class="text-4xl font-bold mb-6"><span class="emoji">🎓</span> Education</h2>
+      <div class="bg-gray-800 p-6 rounded-xl mb-6"><h3 class="font-semibold">MCA</h3><p>Aditya Institute of Management Studies (2024-26)</p></div>
+      <div class="bg-gray-800 p-6 rounded-xl mb-6"><h3 class="font-semibold">BBA(CA)</h3><p>Indira College of Commerce & Science (2021-24)</p></div>
     </div>
     <div id="certificates">
-      <h2 class="text-4xl font-bold mb-6"><span class="text-white">🎖️</span> Certifications</h2>
+      <h2 class="text-4xl font-bold mb-6"><span class="emoji">🎖️</span> Certifications</h2>
       <div class="space-y-4">
-        <div class="bg-gray-800 p-4 rounded-lg">Full Stack Web Development with AWS - IT Vedant</div>
-        <div class="bg-gray-800 p-4 rounded-lg">Programming in Java - Swayam NPTEL</div>
-        <div class="bg-gray-800 p-4 rounded-lg">Python for Web Developers - IBM CEP</div>
-        <div class="bg-gray-800 p-4 rounded-lg">Java Algorithms - Codio, Coursera</div>
-        <div class="bg-gray-800 p-4 rounded-lg">Certified Course in Computer Technology - Raj Software</div>
-        <div class="bg-gray-800 p-4 rounded-lg">Spring Framework - LearnQuest, Coursera</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Data Analytics with Python – NPTEL</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Applied Accelerated AI – NPTEL</div>
+        <div class="bg-gray-800 p-4 rounded-lg">DevOps Mastery – Coursera</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Spring Framework – Coursera</div>
       </div>
     </div>
   </section>
@@ -120,40 +106,40 @@
     <div class="carousel">
       <div class="carousel-track">
         <div class="carousel-card">
-          <img src="assets/netguard.png" class="rounded-lg mb-4 mx-auto w-96">
+          <img src="assets/netguard.png" class="rounded-lg mb-4 mx-auto w-[500px]">
           <h3 class="text-2xl font-bold">NetGuard – Firewall & IDS</h3>
           <p>Real-time network security monitoring with Flask + Socket.IO.</p>
-          <a href="https://github.com/prajwaldikshit/NetGuard-Firewall-Intrusion-Detection-System" target="_blank" class="text-indigo-400">View Code</a>
+          <a href="https://github.com/prajwaldikshit/NetGuard-Firewall-Intrusion-Detection-System" target="_blank" class="mt-3 inline-block bg-indigo-500 px-4 py-2 rounded-lg hover:bg-indigo-600">Code</a>
         </div>
         <div class="carousel-card">
-          <img src="assets/ghostnet.png" class="rounded-lg mb-4 mx-auto w-96">
+          <img src="assets/ghostnet.png" class="rounded-lg mb-4 mx-auto w-[500px]">
           <h3 class="text-2xl font-bold">Ghost NET – Mini VPN</h3>
           <p>Python-based VPN showcasing AES-256 encryption and IP masking.</p>
-          <a href="https://github.com/prajwaldikshit/GhostNet--Mini-VPN-" target="_blank" class="text-indigo-400">View Code</a>
+          <a href="https://github.com/prajwaldikshit/GhostNet--Mini-VPN-" target="_blank" class="mt-3 inline-block bg-indigo-500 px-4 py-2 rounded-lg hover:bg-indigo-600">Code</a>
         </div>
         <div class="carousel-card">
-          <img src="assets/zenbot.png" class="rounded-lg mb-4 mx-auto w-96">
+          <img src="assets/zenbot.png" class="rounded-lg mb-4 mx-auto w-[500px]">
           <h3 class="text-2xl font-bold">Zen Chat Bot</h3>
           <p>AI-powered mental health assistant analyzing user emotions.</p>
-          <a href="https://github.com/prajwaldikshit/zen-chat-bot" target="_blank" class="text-indigo-400">View Code</a>
+          <a href="https://github.com/prajwaldikshit/zen-chat-bot" target="_blank" class="mt-3 inline-block bg-indigo-500 px-4 py-2 rounded-lg hover:bg-indigo-600">Code</a>
         </div>
         <div class="carousel-card">
-          <img src="assets/hero-bg.jpg" class="rounded-lg mb-4 mx-auto w-96">
+          <img src="assets/hero-bg.jpg" class="rounded-lg mb-4 mx-auto w-[500px]">
           <h3 class="text-2xl font-bold">FOCUS-FLOW</h3>
           <p>AI Focus Wellness Assistant with real-time productivity nudges.</p>
-          <a href="https://github.com/prajwaldikshit/FOCUS-FLOW-AI-Focus-Wellness-Assistant" target="_blank" class="text-indigo-400">View Code</a>
+          <a href="https://github.com/prajwaldikshit/FOCUS-FLOW-AI-Focus-Wellness-Assistant" target="_blank" class="mt-3 inline-block bg-indigo-500 px-4 py-2 rounded-lg hover:bg-indigo-600">Code</a>
         </div>
         <div class="carousel-card">
-          <img src="assets/detective.png" class="rounded-lg mb-4 mx-auto w-96">
+          <img src="assets/detective.png" class="rounded-lg mb-4 mx-auto w-[500px]">
           <h3 class="text-2xl font-bold">AI Detective Mystery Game</h3>
           <p>Multiplayer detective game with AI-generated mysteries.</p>
-          <a href="https://github.com/prajwaldikshit/AI-Detective-Mystery-Game" target="_blank" class="text-indigo-400">View Code</a>
+          <a href="https://github.com/prajwaldikshit/AI-Detective-Mystery-Game" target="_blank" class="mt-3 inline-block bg-indigo-500 px-4 py-2 rounded-lg hover:bg-indigo-600">Code</a>
         </div>
         <div class="carousel-card">
-          <img src="assets/hero-bg.jpg" class="rounded-lg mb-4 mx-auto w-96">
+          <img src="assets/hero-bg.jpg" class="rounded-lg mb-4 mx-auto w-[500px]">
           <h3 class="text-2xl font-bold">Show Time Hub</h3>
           <p>Responsive ticket booking system with real-time updates.</p>
-          <a href="https://github.com/prajwaldikshit/ShowTimeHub-Ticket-Booking-System" target="_blank" class="text-indigo-400">View Code</a>
+          <a href="https://github.com/prajwaldikshit/ShowTimeHub-Ticket-Booking-System" target="_blank" class="mt-3 inline-block bg-indigo-500 px-4 py-2 rounded-lg hover:bg-indigo-600">Code</a>
         </div>
       </div>
       <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
@@ -161,28 +147,26 @@
     </div>
   </section>
 
-  <!-- Resume Section -->
+  <!-- Resume -->
   <section id="resume" class="py-20 px-6 max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">Resume</h2>
     <iframe src="assets/resume (3).pdf"></iframe>
-    <a href="assets/resume (3).pdf" download class="mt-4 inline-block bg-indigo-500 px-6 py-3 rounded-lg">⬇ Download Resume</a>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
-    <div class="flex justify-center space-x-12">
-      <a href="mailto:prajwaldikshit30@gmail.com" class="hover:text-indigo-400 flex flex-col items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mb-2" fill="white" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/></svg>
-        Email
+    <div class="flex justify-center space-x-8">
+      <a href="mailto:prajwaldikshit@gmail.com" class="hover:text-indigo-400 text-2xl flex flex-col items-center">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" class="w-10 mb-2"> Email
       </a>
-      <a href="https://github.com/prajwaldikshit" target="_blank" class="hover:text-indigo-400 flex flex-col items-center">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-12 mb-2"> GitHub
+      <a href="https://github.com/prajwaldikshit" target="_blank" class="hover:text-indigo-400 text-2xl flex flex-col items-center">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-10 mb-2"> GitHub
       </a>
     </div>
   </section>
 
-  <!-- Background Animation -->
+  <!-- Background -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
   <script>
@@ -194,14 +178,14 @@
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0x222244,
+      color: 0x222222,
       shininess: 50,
       waveHeight: 20,
       waveSpeed: 1.0,
       zoom: 0.9
     })
 
-    // Carousel JS
+    // Carousel
     let index = 0;
     function moveSlide(step) {
       const track = document.querySelector('.carousel-track');
