@@ -12,7 +12,6 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: #f8fafc;
-      position: relative;
     }
     #vanta-bg {
       position: fixed;
@@ -25,11 +24,8 @@
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.5); /* lighter overlay for visibility */
+      background: rgba(0,0,0,0.5); /* overlay so text is visible */
       z-index: -5;
-    }
-    h1, h2, h3, p, span, a {
-      color: #f8fafc;
     }
     .skill-card {
       transition: transform 0.3s, box-shadow 0.3s;
@@ -44,6 +40,34 @@
       border: none;
       border-radius: 12px;
     }
+    /* Carousel */
+    .carousel {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .carousel-card {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.6);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 5px 12px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .carousel-btn.left { left: 10px; }
+    .carousel-btn.right { right: 10px; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -88,13 +112,13 @@
     <h2 class="text-4xl font-bold mb-12">Skills</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
       <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center">
-        <img src="assets/react.png" class="w-12 mb-2"> React
+        <img src="assets/project-placeholder1.png" class="w-12 mb-2"> React
       </div>
       <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center">
-        <img src="assets/html.png" class="w-12 mb-2"> HTML5
+        <img src="assets/project-placeholder2.png" class="w-12 mb-2"> HTML5
       </div>
       <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center">
-        <img src="assets/css.png" class="w-12 mb-2"> CSS3
+        <img src="assets/project-placeholder3.png" class="w-12 mb-2"> CSS3
       </div>
       <div class="skill-card bg-gray-800 p-6 rounded-xl flex flex-col items-center">
         <img src="assets/javascript.png" class="w-12 mb-2"> JavaScript
@@ -135,7 +159,7 @@
     </div>
   </section>
 
-  <!-- Education + Certificates side by side -->
+  <!-- Education + Certificates -->
   <section id="education" class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
     <div>
       <h2 class="text-4xl font-bold mb-6">🎓 Education</h2>
@@ -171,31 +195,70 @@
   <!-- Projects -->
   <section id="projects" class="py-20 px-6 max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-12">Projects</h2>
-    <p>🚀 Project carousel goes here (NetGuard, Ghost NET, Zen Chat Bot, Focus Flow, AI Detective, Show Time Hub).</p>
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-card">
+          <img src="assets/netguard.png" class="rounded-lg mb-4 mx-auto">
+          <h3 class="text-2xl font-bold">NetGuard – Firewall & IDS</h3>
+          <p>Real-time network security monitoring with Flask + Socket.IO.</p>
+          <a href="https://github.com/prajwaldikshit/NetGuard-Firewall-Intrusion-Detection-System" target="_blank" class="text-indigo-400">View Code</a>
+        </div>
+        <div class="carousel-card">
+          <img src="assets/ghostnet.png" class="rounded-lg mb-4 mx-auto">
+          <h3 class="text-2xl font-bold">Ghost NET – Mini VPN</h3>
+          <p>Python-based VPN showcasing AES-256 encryption and IP masking.</p>
+          <a href="https://github.com/prajwaldikshit/GhostNet--Mini-VPN-" target="_blank" class="text-indigo-400">View Code</a>
+        </div>
+        <div class="carousel-card">
+          <img src="assets/zenbot.png" class="rounded-lg mb-4 mx-auto">
+          <h3 class="text-2xl font-bold">Zen Chat Bot</h3>
+          <p>AI-powered mental health assistant analyzing user emotions.</p>
+          <a href="https://github.com/prajwaldikshit/zen-chat-bot" target="_blank" class="text-indigo-400">View Code</a>
+        </div>
+        <div class="carousel-card">
+          <img src="assets/hero-bg.jpg" class="rounded-lg mb-4 mx-auto">
+          <h3 class="text-2xl font-bold">FOCUS-FLOW</h3>
+          <p>AI Focus Wellness Assistant with real-time productivity nudges.</p>
+          <a href="https://github.com/prajwaldikshit/FOCUS-FLOW-AI-Focus-Wellness-Assistant" target="_blank" class="text-indigo-400">View Code</a>
+        </div>
+        <div class="carousel-card">
+          <img src="assets/detective.png" class="rounded-lg mb-4 mx-auto">
+          <h3 class="text-2xl font-bold">AI Detective Mystery Game</h3>
+          <p>Multiplayer detective game with AI-generated mysteries.</p>
+          <a href="https://github.com/prajwaldikshit/AI-Detective-Mystery-Game" target="_blank" class="text-indigo-400">View Code</a>
+        </div>
+        <div class="carousel-card">
+          <img src="assets/hero-bg.jpg" class="rounded-lg mb-4 mx-auto">
+          <h3 class="text-2xl font-bold">Show Time Hub</h3>
+          <p>Responsive ticket booking system with real-time updates.</p>
+          <a href="https://github.com/prajwaldikshit/ShowTimeHub-Ticket-Booking-System" target="_blank" class="text-indigo-400">View Code</a>
+        </div>
+      </div>
+      <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
   </section>
 
   <!-- Resume Section -->
   <section id="resume" class="py-20 px-6 max-w-6xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">Resume</h2>
-    <p class="mb-6">View my complete resume below.</p>
     <iframe src="assets/resume (3).pdf"></iframe>
   </section>
 
   <!-- Contact -->
   <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
-    <p class="mb-6">Let’s get in touch! Feel free to reach me at:</p>
-    <div class="flex justify-center space-x-8">
-      <a href="mailto:prajwaldikshit30@gmail.com" class="hover:text-indigo-400 text-2xl flex flex-col items-center">
-        <img src="assets/email.png" class="w-10 mb-2"> Email
+    <div class="flex justify-center space-x-12">
+      <a href="mailto:prajwaldikshit30@gmail.com" class="hover:text-indigo-400 flex flex-col items-center">
+        <img src="assets/email.png" class="w-12 mb-2"> Email
       </a>
-      <a href="https://github.com/prajwaldikshit" target="_blank" class="hover:text-indigo-400 text-2xl flex flex-col items-center">
-        <img src="assets/github.png" class="w-10 mb-2"> GitHub
+      <a href="https://github.com/prajwaldikshit" target="_blank" class="hover:text-indigo-400 flex flex-col items-center">
+        <img src="assets/github.png" class="w-12 mb-2"> GitHub
       </a>
     </div>
   </section>
 
-  <!-- Background -->
+  <!-- Background Animation -->
   <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
   <script>
@@ -207,12 +270,21 @@
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0x222222,
+      color: 0x222244,
       shininess: 50,
-      waveHeight: 15,
-      waveSpeed: 0.8,
+      waveHeight: 20,
+      waveSpeed: 1.0,
       zoom: 0.9
     })
+
+    // Carousel JS
+    let index = 0;
+    function moveSlide(step) {
+      const track = document.querySelector('.carousel-track');
+      const cards = document.querySelectorAll('.carousel-card');
+      index = (index + step + cards.length) % cards.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
   </script>
 </body>
 </html>
