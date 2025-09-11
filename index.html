@@ -3,215 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prajwal Dikshit | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <!-- Swiper -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <title>Prajwal Dikshit - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
       font-family: 'Poppins', sans-serif;
-      color: white;
+      color: #f8fafc;
+      position: relative;
     }
-    section { padding: 80px 20px; }
+    #vanta-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -10;
+      top: 0;
+      left: 0;
+    }
     .overlay {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.9));
       z-index: -5;
     }
-    .skill-icon {
-      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    h1, h2, h3, p, span, a {
+      color: #f8fafc;
     }
-    .skill-icon:hover {
-      transform: scale(1.15);
-      color: #8b5cf6;
-      text-shadow: 0 0 10px rgba(139,92,246,0.8);
+    .skill-card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
     }
   </style>
 </head>
-<body class="bg-black relative">
-
-  <!-- Background -->
-  <div id="vanta-bg" class="fixed inset-0 -z-10"></div>
+<body class="bg-black text-white">
+  <div id="vanta-bg"></div>
   <div class="overlay"></div>
 
   <!-- Navbar -->
-  <nav class="fixed w-full z-50 bg-black/50 backdrop-blur-lg">
-    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+  <nav class="fixed w-full z-50 bg-black bg-opacity-50 backdrop-blur-md shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center py-3 px-6">
       <h1 class="text-2xl font-bold text-indigo-400">Prajwal Dikshit</h1>
-      <div class="space-x-6 hidden md:flex">
-        <a href="#home" class="hover:text-indigo-400">Home</a>
-        <a href="#about" class="hover:text-indigo-400">About</a>
-        <a href="#skills" class="hover:text-indigo-400">Skills</a>
-        <a href="#education" class="hover:text-indigo-400">Education</a>
-        <a href="#certificates" class="hover:text-indigo-400">Certificates</a>
-        <a href="#projects" class="hover:text-indigo-400">Projects</a>
-        <a href="#resume" class="hover:text-indigo-400">Resume</a>
-        <a href="#contact" class="hover:text-indigo-400">Contact</a>
-      </div>
-      <a href="assets/Prajwal_Dikshit_Resume.pdf" download class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg">Resume</a>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="#home" class="hover:text-indigo-400">Home</a></li>
+        <li><a href="#about" class="hover:text-indigo-400">About</a></li>
+        <li><a href="#skills" class="hover:text-indigo-400">Skills</a></li>
+        <li><a href="#education" class="hover:text-indigo-400">Education</a></li>
+        <li><a href="#certificates" class="hover:text-indigo-400">Certificates</a></li>
+        <li><a href="#projects" class="hover:text-indigo-400">Projects</a></li>
+        <li><a href="#resume" class="hover:text-indigo-400">Resume</a></li>
+        <li><a href="#contact" class="hover:text-indigo-400">Contact</a></li>
+      </ul>
+      <a href="assets/resume (3).pdf" target="_blank" class="ml-4 bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded-lg">Resume</a>
     </div>
   </nav>
 
-  <!-- Home -->
-  <section id="home" class="flex items-center justify-center min-h-screen text-center">
-    <div>
-      <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I'm <span class="text-indigo-400">Prajwal</span> 👋</h2>
-      <p class="text-lg md:text-xl mb-6">Developer passionate about building clean, fast, and user-friendly web experiences with modern technologies.</p>
-      <div class="space-x-4">
-        <a href="#projects" class="bg-indigo-500 px-6 py-3 rounded-lg hover:bg-indigo-600">View Projects</a>
-        <a href="#contact" class="border border-indigo-500 px-6 py-3 rounded-lg hover:bg-indigo-500">Contact Me</a>
-      </div>
+  <!-- Hero -->
+  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-5xl font-extrabold mb-4">Hi, I'm <span class="text-indigo-400">Prajwal</span> 👋</h1>
+    <p class="text-lg max-w-2xl mb-6">Developer passionate about building clean, fast, and user-friendly web experiences with modern technologies.</p>
+    <div class="flex space-x-4">
+      <a href="#projects" class="bg-indigo-500 px-6 py-3 rounded-lg">View Projects</a>
+      <a href="#contact" class="border px-6 py-3 rounded-lg">Contact Me</a>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-indigo-400 mb-6">About Me</h2>
-    <p class="text-lg leading-relaxed">
-      MCA student with a passion for software development. Proficient in Python, Java, and SQL, with experience in AI/ML and cloud technologies. Seeking an internship or full-time role to apply my technical and analytical skills.
-    </p>
+  <section id="about" class="py-20 px-6 max-w-5xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6">About Me</h2>
+    <p class="text-lg leading-relaxed">MCA student with a passion for software development. Proficient in Python, Java, and SQL, with experience in AI/ML and cloud technologies. Seeking an internship or full-time role to apply my technical and analytical skills.</p>
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-indigo-400 mb-6">Skills</h2>
-    <div class="grid grid-cols-3 md:grid-cols-6 gap-8">
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-react text-4xl"></i><span>React</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-html5 text-4xl"></i><span>HTML5</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-css3-alt text-4xl"></i><span>CSS3</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-js text-4xl"></i><span>JavaScript</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-bootstrap text-4xl"></i><span>Bootstrap</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-solid fa-wind text-4xl"></i><span>Tailwind</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-solid fa-database text-4xl"></i><span>MongoDB</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-solid fa-database text-4xl"></i><span>MySQL</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-python text-4xl"></i><span>Python</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-java text-4xl"></i><span>Java</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-solid fa-code text-4xl"></i><span>C++</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-solid fa-code text-4xl"></i><span>TypeScript</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-solid fa-network-wired text-4xl"></i><span>DevOps</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-docker text-4xl"></i><span>Docker</span></div>
-      <div class="flex flex-col items-center skill-icon"><i class="fa-brands fa-github text-4xl"></i><span>GitHub</span></div>
+  <section id="skills" class="py-20 px-6 max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12">Skills</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">⚛️ React</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🟧 HTML5</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🎨 CSS3</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">📜 JavaScript</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🟪 Bootstrap</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🌬 Tailwind</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🍃 MongoDB</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🐬 MySQL</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🐍 Python</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">☕ Java</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">💻 C++</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🔵 TypeScript</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">⚙️ DevOps</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🐳 Docker</div>
+      <div class="skill-card bg-gray-800 p-6 rounded-xl">🐙 GitHub</div>
     </div>
   </section>
 
-  <!-- Education + Certificates -->
-  <section id="education" class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+  <!-- Education + Certificates side by side -->
+  <section id="education" class="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
     <div>
-      <h2 class="text-3xl font-bold text-indigo-400 mb-6">Education</h2>
-      <div class="space-y-4">
-        <div class="p-4 rounded-lg bg-gray-800/70">
-          <h3 class="font-bold">Master of Computer Applications (MCA)</h3>
-          <p>Aditya Institute of Management Studies & Research, Mumbai (2024-2026)</p>
-        </div>
-        <div class="p-4 rounded-lg bg-gray-800/70">
-          <h3 class="font-bold">Bachelor of Business Administration (BBA-CA)</h3>
-          <p>Indira College of Commerce & Science, Pune (2021-2024)</p>
-        </div>
+      <h2 class="text-4xl font-bold mb-6">Education</h2>
+      <div class="bg-gray-800 p-6 rounded-xl mb-6">
+        <h3 class="font-semibold">Master of Computer Applications (MCA)</h3>
+        <p>Aditya Institute of Management Studies and Research, Borivali</p>
+        <p>2024 - 2026 | Mumbai, India</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl mb-6">
+        <h3 class="font-semibold">Bachelor of Commerce (BCom)</h3>
+        <p>Shankar Narayan College, Bhayandar</p>
+        <p>2021 - 2024 | Mumbai, India</p>
+      </div>
+      <div class="bg-gray-800 p-6 rounded-xl">
+        <h3 class="font-semibold">Higher Secondary Certificate (HSC)</h3>
+        <p>Shankar Narayan College, Bhayandar</p>
+        <p>2019 - 2021 | Mumbai, India</p>
       </div>
     </div>
-    <div>
-      <h2 class="text-3xl font-bold text-indigo-400 mb-6">Certificates</h2>
+    <div id="certificates">
+      <h2 class="text-4xl font-bold mb-6">Certifications</h2>
       <div class="space-y-4">
-        <div class="p-4 rounded-lg bg-gray-800/70">Data Analytics with Python – NPTEL</div>
-        <div class="p-4 rounded-lg bg-gray-800/70">Applied Accelerated AI – NPTEL</div>
-        <div class="p-4 rounded-lg bg-gray-800/70">DevOps Mastery – Coursera</div>
-        <div class="p-4 rounded-lg bg-gray-800/70">Spring Framework – Coursera</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Full Stack Web Development with AWS - IT Vedant</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Programming in Java - Swayam NPTEL</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Python for Web Developers - IBM CEP</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Java Algorithms - Codio, Coursera</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Certified Course in Computer Technology - Raj Software</div>
+        <div class="bg-gray-800 p-4 rounded-lg">Spring Framework - LearnQuest, Coursera</div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Carousel -->
-  <section id="projects" class="max-w-6xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-indigo-400 mb-6">Projects</h2>
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- Project 1 -->
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-6 bg-gray-800/70 p-6 rounded-lg">
-          <img src="assets/netguard.png" class="w-full md:w-1/2 rounded-lg"/>
-          <div class="text-left">
-            <h3 class="font-bold text-xl mb-2">NetGuard – Firewall & IDS</h3>
-            <p>Real-time network security dashboard with Flask + Socket.IO.</p>
-            <div class="mt-2"><span class="bg-indigo-500 px-2 py-1 rounded text-xs">Python</span> <span class="bg-indigo-500 px-2 py-1 rounded text-xs">Flask</span></div>
-            <a href="https://github.com/prajwaldikshit/NetGuard-Firewall-Intrusion-Detection-System" target="_blank" class="inline-block mt-4 bg-indigo-500 px-4 py-2 rounded">View Code</a>
-          </div>
-        </div>
-        <!-- Repeat for all 6 projects -->
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-6 bg-gray-800/70 p-6 rounded-lg">
-          <img src="assets/ghostnet.png" class="w-full md:w-1/2 rounded-lg"/>
-          <div class="text-left">
-            <h3 class="font-bold text-xl mb-2">Ghost NET - Mini VPN</h3>
-            <p>Python-based mini-VPN with AES-256 encryption.</p>
-            <a href="https://github.com/prajwaldikshit/GhostNet--Mini-VPN-" target="_blank" class="inline-block mt-4 bg-indigo-500 px-4 py-2 rounded">View Code</a>
-          </div>
-        </div>
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-6 bg-gray-800/70 p-6 rounded-lg">
-          <img src="assets/zenbot.png" class="w-full md:w-1/2 rounded-lg"/>
-          <div class="text-left">
-            <h3 class="font-bold text-xl mb-2">Zen Chat Bot</h3>
-            <p>AI-powered chatbot analyzing user emotions.</p>
-            <a href="https://github.com/prajwaldikshit/zen-chat-bot" target="_blank" class="inline-block mt-4 bg-indigo-500 px-4 py-2 rounded">View Code</a>
-          </div>
-        </div>
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-6 bg-gray-800/70 p-6 rounded-lg">
-          <img src="assets/hero-bg.jpg" class="w-full md:w-1/2 rounded-lg"/>
-          <div class="text-left">
-            <h3 class="font-bold text-xl mb-2">FOCUS-FLOW</h3>
-            <p>AI assistant that boosts student focus via webcam.</p>
-            <a href="https://github.com/prajwaldikshit/FOCUS-FLOW-AI-Focus-Wellness-Assistant" target="_blank" class="inline-block mt-4 bg-indigo-500 px-4 py-2 rounded">View Code</a>
-          </div>
-        </div>
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-6 bg-gray-800/70 p-6 rounded-lg">
-          <img src="assets/detective.png" class="w-full md:w-1/2 rounded-lg"/>
-          <div class="text-left">
-            <h3 class="font-bold text-xl mb-2">AI Detective Mystery Game</h3>
-            <p>Multiplayer detective game with AI-generated mysteries.</p>
-            <a href="https://github.com/prajwaldikshit/AI-Detective-Mystery-Game" target="_blank" class="inline-block mt-4 bg-indigo-500 px-4 py-2 rounded">View Code</a>
-          </div>
-        </div>
-        <div class="swiper-slide flex flex-col md:flex-row items-center gap-6 bg-gray-800/70 p-6 rounded-lg">
-          <img src="assets/hero-bg.jpg" class="w-full md:w-1/2 rounded-lg"/>
-          <div class="text-left">
-            <h3 class="font-bold text-xl mb-2">Show Time Hub</h3>
-            <p>Responsive seat-booking system with real-time updates.</p>
-            <a href="https://github.com/prajwaldikshit/ShowTimeHub-Ticket-Booking-System" target="_blank" class="inline-block mt-4 bg-indigo-500 px-4 py-2 rounded">View Code</a>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-pagination mt-4"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
+  <!-- Projects (Carousel style placeholder) -->
+  <section id="projects" class="py-20 px-6 max-w-6xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12">Projects</h2>
+    <p class="mb-8">🚀 Carousel of projects goes here (NetGuard, Ghost NET, Zen Chat Bot, Focus Flow, AI Detective, Show Time Hub).</p>
   </section>
 
-  <!-- Resume -->
-  <section id="resume" class="max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-indigo-400 mb-6">Resume</h2>
-    <a href="assets/Prajwal_Dikshit_Resume.pdf" download class="inline-block bg-indigo-500 px-6 py-3 rounded-lg hover:bg-indigo-600">Download Resume</a>
-    <div class="mt-6 rounded-lg overflow-hidden">
-      <object data="assets/Prajwal_Dikshit_Resume.pdf" type="application/pdf" class="w-full h-[70vh]">
-        <p>Your browser cannot display the PDF. <a href="assets/Prajwal_Dikshit_Resume.pdf" class="underline">Download it here</a>.</p>
-      </object>
+  <!-- Resume Section -->
+  <section id="resume" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6">Resume</h2>
+    <p class="mb-6">You can view or download my complete resume below.</p>
+    <div class="flex justify-center space-x-6">
+      <a href="assets/resume (3).pdf" target="_blank" class="bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-lg">View Resume</a>
+      <a href="assets/resume (3).pdf" download class="border px-6 py-3 rounded-lg">Download Resume</a>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl font-bold text-indigo-400 mb-6">Contact Me</h2>
-    <div class="flex justify-center gap-6">
-      <a href="mailto:prajwaldikshit@gmail.com" class="skill-icon"><i class="fa-solid fa-envelope text-3xl"></i></a>
-      <a href="https://github.com/prajwaldikshit" target="_blank" class="skill-icon"><i class="fa-brands fa-github text-3xl"></i></a>
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-6">Contact Me</h2>
+    <p class="mb-6">Let’s get in touch! Feel free to reach me at:</p>
+    <div class="flex justify-center space-x-8">
+      <a href="mailto:prajwaldikshit30@gmail.com" class="hover:text-indigo-400 text-2xl">📧 Email</a>
+      <a href="https://github.com/prajwaldikshit" target="_blank" class="hover:text-indigo-400 text-2xl">🐙 GitHub</a>
     </div>
   </section>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.141.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
   <script>
-    // Vanta Waves
     VANTA.WAVES({
       el: "#vanta-bg",
       mouseControls: true,
@@ -220,19 +170,12 @@
       minWidth: 200.00,
       scale: 1.00,
       scaleMobile: 1.00,
-      color: 0x3b82f6,
-      shininess: 50,
+      color: 0x1a1a1a,
+      shininess: 30,
       waveHeight: 20,
-      waveSpeed: 0.75,
-      zoom: 0.85
+      waveSpeed: 1.0,
+      zoom: 0.9
     })
-    // Swiper
-    var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 30,
-      loop: true,
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }
-    });
   </script>
 </body>
 </html>
