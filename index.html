@@ -14,6 +14,8 @@
     section { padding-top: 5rem; padding-bottom: 5rem; }
     h1, h2, h3 { color: #fff; }
     p { color: #d1d5db; }
+
+    /* gradient animated headline */
     .animate-text { background-size: 200% 200%; animation: gradientText 6s ease infinite; }
     @keyframes gradientText {
       0%{background-position:0% 50%}
@@ -21,10 +23,20 @@
       100%{background-position:0% 50%}
     }
 
+    /* cards */
     .skill-card { transition: all .3s ease; color: #e5e7eb; background-color: #2d2f33; }
     .skill-card:hover { transform: translateY(-6px) scale(1.03); background-color: #1f2937; }
 
-    .project-card { position: relative; overflow: hidden; border-radius: 1rem; background-color: #1f2937; }
+    .project-card { 
+      position: relative; 
+      overflow: hidden; 
+      border-radius: 1rem; 
+      background-color: #1f2937; 
+      opacity: 0; 
+      transform: translateY(30px); 
+      transition: all .6s ease; 
+    }
+    .project-card.show { opacity: 1; transform: translateY(0); }
     .project-card img { transition: transform .3s ease; }
     .project-card:hover img { transform: scale(1.05); }
     .overlay {
@@ -37,19 +49,27 @@
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-top: 0.5rem; }
     .project-tag { background-color: #4f46e5; color: white; padding: 0.25rem 0.5rem; font-size: 0.75rem; border-radius: 0.375rem; }
 
+    /* reveal effect */
     .reveal { opacity: 0; transform: translateY(15px); transition: .6s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
 
+    /* scroll progress */
     #progressBar {
       position: fixed; top: 0; left: 0; height: 4px; z-index: 50;
       background: linear-gradient(to right,#6366f1,#8b5cf6,#ec4899);
       width: 0%;
     }
 
-    nav a.active {
-      color: #8b5cf6;
-      font-weight: bold;
+    nav a.active { color: #8b5cf6; font-weight: bold; }
+
+    /* hero fade animation */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
+    .fade-hero { opacity: 0; animation: fadeUp 1s ease forwards; }
+    .fade-hero.delay-1 { animation-delay: 0.3s; }
+    .fade-hero.delay-2 { animation-delay: 0.6s; }
   </style>
 </head>
 <body class="bg-gradient-to-b from-gray-900 via-black to-gray-900 text-gray-100">
@@ -79,14 +99,12 @@
   <main class="max-w-6xl mx-auto px-6 pt-32">
 
     <!-- HERO -->
-    <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center text-center reveal relative">
-      <img src="assets/homebg.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover -z-10">
-      <div class="absolute inset-0 bg-black/60 -z-10"></div>
-      <h1 class="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent animate-text" style="background-image:linear-gradient(to right,#6366f1,#8b5cf6,#ec4899);">
+    <section id="home" class="min-h-[70vh] flex flex-col justify-center items-center text-center">
+      <h1 class="fade-hero text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent animate-text" style="background-image:linear-gradient(to right,#6366f1,#8b5cf6,#ec4899);">
         Hi, I'm Prajwal 👋
       </h1>
-      <p class="mt-4 text-lg max-w-2xl">Developer passionate about building clean, fast, and user-friendly web experiences with modern technologies.</p>
-      <div class="mt-6 flex gap-4">
+      <p class="fade-hero delay-1 mt-4 text-lg max-w-2xl">Developer passionate about building clean, fast, and user-friendly web experiences with modern technologies.</p>
+      <div class="fade-hero delay-2 mt-6 flex gap-4">
         <a href="#projects" class="px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:scale-105 transition">View Projects</a>
         <a href="#contact" class="px-6 py-3 border border-indigo-500 text-indigo-400 rounded-lg hover:bg-indigo-500 hover:text-white transition">Contact Me</a>
       </div>
@@ -101,73 +119,97 @@
     </section>
 
     <!-- SKILLS -->
-    <!-- (keeping skills section unchanged since we already fixed it earlier) -->
+    <section id="skills" class="reveal">
+      <h2 class="text-3xl font-bold text-purple-400 text-center">Skills</h2>
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-react text-blue-400 text-3xl"></i><p class="mt-2">React</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-html5 text-orange-400 text-3xl"></i><p class="mt-2">HTML5</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-css3-alt text-sky-400 text-3xl"></i><p class="mt-2">CSS3</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-js text-yellow-300 text-3xl"></i><p class="mt-2">JavaScript</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-bootstrap text-purple-400 text-3xl"></i><p class="mt-2">Bootstrap</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-solid fa-wind text-cyan-300 text-3xl"></i><p class="mt-2">Tailwind</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-solid fa-leaf text-green-400 text-3xl"></i><p class="mt-2">MongoDB</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-solid fa-database text-sky-400 text-3xl"></i><p class="mt-2">MySQL</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-python text-yellow-300 text-3xl"></i><p class="mt-2">Python</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-java text-red-400 text-3xl"></i><p class="mt-2">Java</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-solid fa-code text-gray-200 text-3xl"></i><p class="mt-2">C++</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-js text-blue-400 text-3xl"></i><p class="mt-2">TypeScript</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-solid fa-network-wired text-pink-400 text-3xl"></i><p class="mt-2">DevOps</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-docker text-blue-400 text-3xl"></i><p class="mt-2">Docker</p></div>
+        <div class="skill-card p-6 rounded-xl text-center"><i class="fa-brands fa-github text-gray-300 text-3xl"></i><p class="mt-2">GitHub</p></div>
+      </div>
+    </section>
 
     <!-- EDUCATION + CERTIFICATIONS -->
-    <!-- (keeping your new side-by-side layout) -->
+    <section id="education" class="reveal">
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h2 class="text-3xl font-bold text-indigo-400 mb-6 flex items-center gap-2"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+          <div class="space-y-6">
+            <div class="bg-gray-800 p-6 rounded-xl shadow">
+              <h3 class="text-xl font-bold">Masters of Computer Applications (MCA)</h3>
+              <p class="text-indigo-400">Aditya Institute of Management Studies & Research, University of Mumbai</p>
+              <p>2024 - 2026 | Mumbai, India</p>
+              <p class="mt-2 text-sm">Coursework: Distributed Systems, Cloud Computing, Ethical Hacking, AI & ML, Advanced Java, Web Technologies, DevOps</p>
+            </div>
+            <div class="bg-gray-800 p-6 rounded-xl shadow">
+              <h3 class="text-xl font-bold">Bachelor of Business Administration (BBA - CA)</h3>
+              <p class="text-indigo-400">Indira College of Commerce & Science, University of Pune</p>
+              <p>2021 - 2024 | Pune, India</p>
+              <p class="mt-2 text-sm">Coursework: Database Systems, Java, R, Android Studio, C++, Software Testing, Statistics</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold text-indigo-400 mb-6 flex items-center gap-2"><i class="fa-solid fa-certificate"></i> Certifications</h2>
+          <ul class="space-y-4">
+            <li class="bg-gray-800 p-4 rounded-lg shadow">Data Analytics with Python – NPTEL (IIT Roorkee)</li>
+            <li class="bg-gray-800 p-4 rounded-lg shadow">Applied Accelerated Artificial Intelligence – NPTEL (IIT Palakkad, NVIDIA)</li>
+            <li class="bg-gray-800 p-4 rounded-lg shadow">DevOps Mastery – Coursera (KodeKloud)</li>
+            <li class="bg-gray-800 p-4 rounded-lg shadow">Spring Framework – Coursera (LearnQuest)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
     <!-- PROJECTS -->
     <section id="projects" class="reveal">
       <h2 class="text-3xl font-bold text-indigo-400 text-center mb-10">Projects</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        
-        <!-- NetGuard -->
+
         <div class="project-card shadow">
           <img src="assets/netguard.png" alt="NetGuard" class="h-48 w-full object-cover">
           <div class="overlay"><a href="https://github.com/prajwaldikshit/NetGuard-Firewall-Intrusion-Detection-System" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Code</a></div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg text-indigo-300">NetGuard – Firewall & IDS</h3>
-            <div class="project-tags"><span class="project-tag">Flask</span><span class="project-tag">Socket.IO</span></div>
-            <p class="text-sm text-gray-400 mt-2">Real-time network security monitoring dashboard with intrusion detection and live threat visualization.</p>
-          </div>
+          <div class="p-5"><h3 class="font-bold text-lg text-indigo-300">NetGuard – Firewall & IDS</h3><div class="project-tags"><span class="project-tag">Flask</span><span class="project-tag">Socket.IO</span></div><p class="text-sm text-gray-400 mt-2">Real-time network security monitoring dashboard with intrusion detection and live threat visualization.</p></div>
         </div>
 
-        <!-- Ghost NET -->
         <div class="project-card shadow">
           <img src="assets/ghostnet.png" alt="Ghost NET" class="h-48 w-full object-cover">
           <div class="overlay"><a href="https://github.com/prajwaldikshit/GhostNet--Mini-VPN-" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Code</a></div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg text-indigo-300">Ghost NET - Mini VPN</h3>
-            <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">AES-256</span></div>
-            <p class="text-sm text-gray-400 mt-2">Python-based mini-VPN showcasing encryption, IP masking, and VPN functionality via CLI and web.</p>
-          </div>
+          <div class="p-5"><h3 class="font-bold text-lg text-indigo-300">Ghost NET - Mini VPN</h3><div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">AES-256</span></div><p class="text-sm text-gray-400 mt-2">Python-based mini-VPN showcasing encryption, IP masking, and VPN functionality via CLI and web.</p></div>
         </div>
 
-        <!-- Zen Chat Bot -->
         <div class="project-card shadow">
           <img src="assets/zenbot.png" alt="Zen Chat Bot" class="h-48 w-full object-cover">
           <div class="overlay"><a href="https://github.com/prajwaldikshit/zen-chat-bot" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Code</a></div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg text-indigo-300">Zen Chat Bot – AI Mental Health Assistant</h3>
-            <div class="project-tags"><span class="project-tag">AI</span><span class="project-tag">NLP</span></div>
-            <p class="text-sm text-gray-400 mt-2">AI-powered chatbot that analyzes emotions from text and provides supportive responses.</p>
-          </div>
+          <div class="p-5"><h3 class="font-bold text-lg text-indigo-300">Zen Chat Bot – AI Mental Health Assistant</h3><div class="project-tags"><span class="project-tag">AI</span><span class="project-tag">NLP</span></div><p class="text-sm text-gray-400 mt-2">AI-powered chatbot that analyzes emotions from text and provides supportive responses.</p></div>
         </div>
 
-        <!-- Focus Flow -->
         <div class="project-card shadow">
           <img src="assets/hero-bg.jpg" alt="Focus Flow" class="h-48 w-full object-cover">
           <div class="overlay"><a href="https://github.com/prajwaldikshit/FOCUS-FLOW-AI-Focus-Wellness-Assistant" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Code</a></div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg text-indigo-300">FOCUS-FLOW – AI Focus Wellness Assistant</h3>
-            <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">AI</span></div>
-            <p class="text-sm text-gray-400 mt-2">React web app that boosts student focus by analyzing webcam input and providing nudges.</p>
-          </div>
+          <div class="p-5"><h3 class="font-bold text-lg text-indigo-300">FOCUS-FLOW – AI Focus Wellness Assistant</h3><div class="project-tags"><span class="project-tag">React</span><span class="project-tag">AI</span></div><p class="text-sm text-gray-400 mt-2">React web app that boosts student focus by analyzing webcam input and providing nudges.</p></div>
         </div>
 
-        <!-- AI Detective -->
         <div class="project-card shadow">
           <img src="assets/detective.png" alt="AI Detective" class="h-48 w-full object-cover">
           <div class="overlay"><a href="https://github.com/prajwaldikshit/AI-Detective-Mystery-Game" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Code</a></div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg text-indigo-300">AI Detective Mystery Game</h3>
-            <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Express.js</span><span class="project-tag">OpenAI</span></div>
-            <p class="text-sm text-gray-400 mt-2">Real-time multiplayer detective game with AI-generated mysteries.</p>
-          </div>
+          <div class="p-5"><h3 class="font-bold text-lg text-indigo-300">AI Detective Mystery Game</h3><div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Express.js</span><span class="project-tag">OpenAI</span></div><p class="text-sm text-gray-400 mt-2">Real-time multiplayer detective game with AI-generated mysteries.</p></div>
         </div>
 
-        <!-- Show Time Hub -->
         <div class="project-card shadow">
+          <img src
+            <div class="project-card shadow">
           <img src="assets/hero-bg.jpg" alt="Show Time Hub" class="h-48 w-full object-cover">
           <div class="overlay"><a href="https://github.com/prajwaldikshit/ShowTimeHub-Ticket-Booking-System" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg">Code</a></div>
           <div class="p-5">
@@ -180,16 +222,45 @@
       </div>
     </section>
 
-    <!-- RESUME + CONTACT remain same -->
+    <!-- RESUME -->
+    <section id="resume" class="text-center reveal pb-24">
+      <h2 class="text-3xl font-bold text-purple-400">Resume</h2>
+      <a href="assets/resume.pdf" download class="mt-6 inline-block px-6 py-3 bg-indigo-600 text-white rounded-lg shadow hover:scale-105 transition text-sm">
+        <i class="fa-solid fa-download mr-2"></i> Download Resume
+      </a>
+      <div class="mt-10 rounded-2xl overflow-hidden shadow-lg border border-gray-700">
+        <object data="assets/resume.pdf" type="application/pdf" class="w-full h-[70vh]">
+          <p class="p-4">Your browser cannot display the PDF. <a href="assets/resume.pdf" class="underline">Download it here</a>.</p>
+        </object>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="text-center reveal pb-20">
+      <div class="max-w-3xl mx-auto bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl shadow-lg p-10">
+        <h2 class="text-3xl font-bold">Let’s Connect 🚀</h2>
+        <p class="mt-3">Open to collaborations and exciting opportunities.</p>
+        <div class="mt-6 flex justify-center gap-6">
+          <a href="mailto:prajwaldikshit@gmail.com" class="hover:scale-110 transition"><i class="fa-solid fa-envelope text-2xl"></i></a>
+          <a href="https://github.com/prajwaldikshit" target="_blank" class="hover:scale-110 transition"><i class="fa-brands fa-github text-2xl"></i></a>
+        </div>
+      </div>
+    </section>
 
   </main>
 
+  <!-- SCRIPT -->
   <script>
+    // Reveal observer (sections + projects)
     const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+      entries.forEach(e => { 
+        if (e.isIntersecting) e.target.classList.add('show'); 
+      });
     }, { threshold: 0.15 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+    document.querySelectorAll('.reveal, .project-card').forEach(el => io.observe(el));
+
+    // Scroll progress + navbar active
     window.addEventListener("scroll", () => {
       const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
