@@ -20,6 +20,72 @@
     .carousel-btn.left { left: 10px; }
     .carousel-btn.right { right: 10px; }
     h2 span.emoji { filter: brightness(0) invert(1); } /* force emojis white */
+
+    /* Experience Section */
+    .exp-timeline { position: relative; padding-left: 32px; }
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 11px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, #818cf8, rgba(129,140,248,0.15));
+      border-radius: 2px;
+    }
+    .exp-item { position: relative; margin-bottom: 24px; }
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -26px;
+      top: 24px;
+      width: 12px;
+      height: 12px;
+      background: #818cf8;
+      border-radius: 50%;
+      border: 3px solid rgba(129,140,248,0.3);
+      box-shadow: 0 0 12px rgba(129,140,248,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .exp-item:hover::before {
+      transform: scale(1.4);
+      box-shadow: 0 0 20px rgba(129,140,248,0.7);
+    }
+    .exp-card {
+      background: rgba(31, 41, 55, 0.85);
+      border: 1px solid rgba(129,140,248,0.15);
+      border-radius: 12px;
+      padding: 20px 24px;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .exp-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(129,140,248,0.45);
+      box-shadow: 0 8px 30px rgba(129,140,248,0.1);
+    }
+    .exp-badge {
+      display: inline-block;
+      background: rgba(129,140,248,0.15);
+      color: #a5b4fc;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      letter-spacing: 0.03em;
+      margin-right: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* Scroll reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -33,6 +99,7 @@
       <ul class="hidden md:flex space-x-6">
         <li><a href="#home" class="hover:text-indigo-400">Home</a></li>
         <li><a href="#about" class="hover:text-indigo-400">About</a></li>
+        <li><a href="#experience" class="hover:text-indigo-400">Experience</a></li>
         <li><a href="#skills" class="hover:text-indigo-400">Skills</a></li>
         <li><a href="#education" class="hover:text-indigo-400">Education</a></li>
         <li><a href="#certificates" class="hover:text-indigo-400">Certificates</a></li>
@@ -58,6 +125,119 @@
   <section id="about" class="py-20 px-6 max-w-5xl mx-auto text-center">
     <h2 class="text-4xl font-bold mb-6">About Me</h2>
     <p class="text-lg leading-relaxed">MCA student with hands-on experience in AI systems, backend engineering, and semantic search through a production internship. Built a client-side Vision-Language Model and contributed to RAG pipelines and enterprise document processing systems. Skilled in Python, JavaScript, and vector databases. Interested in building scalable, intelligent AI-driven systems.</p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl font-bold mb-4">💼 Experience</h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">Production engineering at the intersection of AI, legal tech, and scalable systems</p>
+    </div>
+
+    <!-- Company Header -->
+    <div class="reveal bg-gray-800 bg-opacity-80 rounded-2xl p-6 md:p-8 mb-10 border border-gray-700 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 via-indigo-400 to-transparent"></div>
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <h3 class="text-2xl font-bold text-white">Software Engineering Intern</h3>
+          <p class="text-indigo-400 font-semibold text-lg mt-1">QiLegal by 63 Moons Technologies Limited</p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-3 text-gray-400 text-sm font-medium">
+          <span class="flex items-center gap-2">📅 January 2026 — April 2026</span>
+          <span class="flex items-center gap-2">📍 Mumbai, India</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="exp-timeline">
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-2xl mt-0.5">🧠</span>
+            <h4 class="text-lg font-semibold text-white">Client-Side Vision-Language Model</h4>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+            Built a fully client-side Vision-Language Model (VLM) system using Qwen 3.5 (0.8B/2B), enabling OCR and multimodal reasoning directly in the browser via ONNX Runtime and WebAssembly — eliminating all backend inference dependency. Optimized performance through Q4 quantization, balancing model size, latency, and accuracy under browser memory constraints.
+          </p>
+          <div class="mt-3 flex flex-wrap">
+            <span class="exp-badge">ONNX Runtime</span>
+            <span class="exp-badge">WebAssembly</span>
+            <span class="exp-badge">Qwen 3.5</span>
+            <span class="exp-badge">Quantization</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-2xl mt-0.5">📄</span>
+            <h4 class="text-lg font-semibold text-white">Document Ingestion & Observability</h4>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+            Integrated the Unstructured API into the QiLegal enterprise backend to support end-to-end document ingestion and preprocessing pipelines (PDF, DOCX, emails). Designed granular logging systems across the codebase to improve observability, debugging, and production reliability.
+          </p>
+          <div class="mt-3 flex flex-wrap">
+            <span class="exp-badge">Unstructured API</span>
+            <span class="exp-badge">Pipeline Design</span>
+            <span class="exp-badge">Logging</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-2xl mt-0.5">🔍</span>
+            <h4 class="text-lg font-semibold text-white">Semantic Search with Vespa</h4>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+            Worked with Vespa vector database for semantic search and retrieval in QiSearch — querying indexed legal datasets, analyzing centroid-based clustering, and supporting approximate nearest-neighbor retrieval for case similarity and legal judgment search.
+          </p>
+          <div class="mt-3 flex flex-wrap">
+            <span class="exp-badge">Vespa</span>
+            <span class="exp-badge">Vector Search</span>
+            <span class="exp-badge">ANN Retrieval</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-2xl mt-0.5">🕷️</span>
+            <h4 class="text-lg font-semibold text-white">Legal Data Web Scraping</h4>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+            Developed a production-grade web scraping system for legal data extraction, featuring multi-page crawling, dynamic content handling, structured data parsing, retry/failure mechanisms, and clean data pipelines for downstream AI indexing and RAG ingestion.
+          </p>
+          <div class="mt-3 flex flex-wrap">
+            <span class="exp-badge">Web Scraping</span>
+            <span class="exp-badge">Data Pipelines</span>
+            <span class="exp-badge">Retry Logic</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item reveal">
+        <div class="exp-card">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-2xl mt-0.5">🤖</span>
+            <h4 class="text-lg font-semibold text-white">RAG Pipeline Development</h4>
+          </div>
+          <p class="text-gray-300 leading-relaxed text-sm md:text-base">
+            Contributed to a production-level RAG (Retrieval-Augmented Generation) pipeline integrating document processing, embedding generation, Vespa vector storage, and LLM-based response synthesis for intelligent legal query handling across QiLegal's platform.
+          </p>
+          <div class="mt-3 flex flex-wrap">
+            <span class="exp-badge">RAG</span>
+            <span class="exp-badge">Embeddings</span>
+            <span class="exp-badge">LLM Synthesis</span>
+            <span class="exp-badge">Vespa</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Skills -->
@@ -229,6 +409,17 @@
       index = (index + step + cards.length) % cards.length;
       track.style.transform = `translateX(-${index * 100}%)`;
     }
+
+    // Scroll reveal for experience items
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    revealElements.forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>
